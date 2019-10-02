@@ -1,0 +1,171 @@
+% !TEX engine = lualatex
+\documentclass{jips}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Editing informations %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JIPS Volume, Number and Article number
+\JIPSVol{2}
+\JIPSNum{1}
+\JIPSArticleNum{4}
+% Month and year of publication
+\JIPSMonth{décembre}
+\JIPSYear{2019}
+% Full submission date
+\JIPSSubmissionDate{17 juin 2019}
+% Full acceptance date
+\JIPSAcceptanceDate{4 décembre 2019}
+% First page (last page automatically computed)
+\JIPSPageBegin{1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Article informations %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% French title
+\TitleFr{Titre en français ici}
+% English title
+\TitleEn{English title here}
+% Short title (used on page headers and PDF title metadata)
+\ShortTitle{Titre court ici}
+
+
+
+
+\Authors{
+  \Author{Firstname LASTNAME}
+  \Affiliation{Affiliation/Adresse}
+  \Mail{mail@example.com}
+
+  \Author{Firstname LAST NAME}
+  \Affiliation{Affiliation/Adresse}
+  \Mail{mail@example.com}
+
+  \Author{First Name LASTNAME}
+  \Affiliation{Affiliation/Adresse}
+  \Mail{mail@example.com}
+
+  %\Author{First Name LASTNAME}
+  %\Affiliation{Affiliation/Adresse}
+  %\Mail{mail@example.com}
+}
+
+\ShortAuthors{Firstname Lastname, Firstname Last Name \& First Name Lastname}
+
+
+
+\AbstractEn{\lipsum[100]}
+
+\KeywordsEn{some, key, words}
+
+
+
+\AbstractFr{\lipsum[101]}
+
+\KeywordsFr{quelques, mots, clés}
+
+
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Article content %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introduction}
+
+Example refs:
+article \citep{article} ;
+book \citep{book} ;
+booklet \citep{booklet} ;
+conference \citep{conference} ;
+inbook \citep{inbook} ;
+incollection \citep{incollection} ;
+manual \citep{manual} ;
+mastersthesis \citep{mastersthesis} ;
+misc \citep{misc} ;
+and some others \citep{phdthesis,proceedings,techreport,unpublished}
+
+\lipsum[1]
+
+\section{Titre 1}
+
+\lipsum[2]
+
+\subsection{Titre 2}
+
+\lipsum[3]
+
+\subsubsection{Titre 3}
+
+\lipsum[4]
+
+\paragraph{Titre 4}
+
+\lipsum[5]
+
+\subparagraph{Titre 5}
+
+\lipsum[6]
+
+\section{Figures}
+
+\lipsum[7]
+
+\begin{figure}[!ht]
+    \centering
+    \caption{Example of an image with a caption above. The caption MUST be above the image, not below.}
+    \includegraphics[width=10cm]{afihm_logo.pdf}
+    \label{fig:afihm}
+\end{figure}
+
+\lipsum[8]
+
+\section{Maths}
+
+$$E=mc^2$$
+
+In physics, the mass-energy equivalence is stated
+by the equation $E=mc^2$, discovered in 1905 by Albert Einstein.
+
+Depending on the value of $x$ the equation \( f(x) = \sum_{i=0}^{n} \frac{a_i}{1+x} \) may diverge or converge.
+
+\[ f(x) = \sum_{i=0}^{n} \frac{a_i}{1+x} \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Acknowledgement %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can remove this section if you don't need it
+\begin{ack}
+This work was founded by blabla blabla.
+\end{ack}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{example}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Authors biographies %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{JIPSBios}
+  \JIPSBio{Firstname LASTNAME}{bio.jpg}{%
+    Biography of the author
+  }
+  \JIPSBio{Firstname LAST NAME}{bio.jpg}{%
+    Biography of the author
+  }
+  \JIPSBio{First Name LASTNAME}{bio.jpg}{%
+    Biography of the author
+  }
+\end{JIPSBios}
+
+\end{document}
