@@ -7,6 +7,7 @@
 \RequirePackage[T1]{fontenc}
 
 \RequirePackage[bookmarksnumbered,unicode,colorlinks=false,pdfborder={0 0 0},breaklinks=true]{hyperref}
+\urlstyle{sf}
 \RequirePackage{graphicx}
 \RequirePackage[prologue]{xcolor}
 \RequirePackage{colortbl}
@@ -78,10 +79,29 @@
 \titleformat{\subsubsection}{\arialnarrowfont\fontsize{11pt}{11pt}\selectfont\color{darkbluejips}}{\textbf{\textit{\thesubsubsection}}}{15pt}{{\bfseries\itshape #1}}
 \titlespacing{\subsubsection}{0pt}{8pt}{0pt}
 
+\RequirePackage[natbibapa]{apacite}
+\renewenvironment{APACrefauthors}{%
+  \includegraphics{jips_ref_bullet.pdf}%
+  \begingroup \APACrefauthstyle
+}{\endgroup }
+\setlength{\bibhang}{23.5pt}
+\setlength{\bibsep}{0.5em}
+\bibliographystyle{apacite}
+\AtBeginDocument{%
+  \renewcommand\doi[1]{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \urlstyle{same}
 
-\RequirePackage[round,authoryear]{natbib}
-\RequirePackage{apalike}
-\bibliographystyle{apalike}
+
+  \let\oldthebibliography\thebibliography
+  \let\endoldthebibliography\endthebibliography
+  \renewenvironment{thebibliography}[1]{
+    \begin{oldthebibliography}{#1}
+      \fontsize{10pt}{12pt}\selectfont
+  }
+  {
+    \end{oldthebibliography}
+  }
+}
 
 
 \newcommand\@infoJIPSVol{}
@@ -169,6 +189,7 @@
 
 
 \renewcommand\maketitle{
+  \setcounter{page}{\@infoJIPSPageBegin}
   \pagestyle{plain}
 
   \noindent \begin{minipage}[t]{15.95cm}
@@ -219,7 +240,6 @@
 
 
   \newpage
-  \setcounter{page}{\@infoJIPSPageBegin}
   \pagestyle{content}
   \setlength{\parskip}{6pt}
   \setlength{\baselineskip}{12.5pt}
