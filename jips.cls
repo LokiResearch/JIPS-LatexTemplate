@@ -13,6 +13,7 @@
 \RequirePackage{colortbl}
 \RequirePackage[a4paper, left=2.5cm, right=2.5cm, top=1cm, bottom=1.25cm, head=82pt, headsep=-13pt, foot=60pt, includeheadfoot]{geometry}
 \RequirePackage{lastpage}
+\RequirePackage{tikz}
 
 \definecolor{orangejips}{RGB}{245,80,47}
 \definecolor{orange2jips}{RGB}{244,67,12}
@@ -81,7 +82,8 @@
 
 \RequirePackage[natbibapa]{apacite}
 \renewenvironment{APACrefauthors}{%
-  \includegraphics{jips_ref_bullet.pdf}%
+  % total display width of the following line : 23.5pt (the length of \bibhang)
+  \hspace{5.25pt}\begin{tikzpicture}\fill (0,0) -- (0,0.222) -- (0.111,0.111) -- cycle;\end{tikzpicture}\hspace{15.1pt}%
   \begingroup \APACrefauthstyle
 }{\endgroup }
 \setlength{\bibhang}{23.5pt}
