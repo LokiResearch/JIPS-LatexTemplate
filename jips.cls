@@ -1,5 +1,36 @@
+% JIPS Journal Template.
+%
+% FILENAME: jips.cls
+%  
+% SOURCE: See https://github.com/LokiResearch/JIPS-LatexTemplate for latest official version.
+%
+% NOTE: If you wish to edit this document, please list edits properly
+% in the CHANGELOG section and not scattered through the code.
+% 
+% 2019-11-29 Creation by Marc Baloup
+%
+% CHANGELOG: 
+%
+% 
+%
+% LICENSE: Public domain: You are free to do whatever you want with
+% this template.  If you improve this in any way, please submit a
+% pull request to the Github repository.
+
+\typeout{}
+
+\typeout{Document Class JIPS}
+
+\typeout{Available at https://github.com/LokiResearch/JIPS-LatexTemplate.}
+
+\typeout{}
+
+\typeout{- <November 29, 2019> Created by Marc Baloup.}
+
+\typeout{}
+
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jips}[2019/06/14 JIPS]
+\ProvidesClass{jips}[2019/11/29 JIPS]
 
 \LoadClass[11pt]{article}
 
