@@ -7,7 +7,6 @@
 \RequirePackage[T1]{fontenc}
 
 \RequirePackage[bookmarksnumbered,unicode,colorlinks=false,pdfborder={0 0 0},breaklinks=true]{hyperref}
-\urlstyle{sf}
 \RequirePackage{graphicx}
 \RequirePackage[prologue]{xcolor}
 \RequirePackage{colortbl}
