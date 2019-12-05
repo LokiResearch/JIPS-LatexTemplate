@@ -1,17 +1,18 @@
 % JIPS Journal Template.
 %
 % FILENAME: jips.cls
-%  
+%
 % SOURCE: See https://github.com/LokiResearch/JIPS-LatexTemplate for latest official version.
 %
 % NOTE: If you wish to edit this document, please list edits properly
 % in the CHANGELOG section and not scattered through the code.
-% 
+%
+% CHANGELOG:
+%
 % 2019-11-29 Creation by Marc Baloup
 %
-% CHANGELOG: 
+% 2019-12-05 Added checklist formatting + renamed JIPSBios to biographies and JIPSBio to biography
 %
-% 
 %
 % LICENSE: Public domain: You are free to do whatever you want with
 % this template.  If you improve this in any way, please submit a
@@ -30,7 +31,7 @@
 \typeout{}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jips}[2019/11/29 JIPS]
+\ProvidesClass{jips}[2019/12/05 JIPS]
 
 \LoadClass[11pt]{article}
 
@@ -334,6 +335,29 @@
 
 
 
+\RequirePackage{enumitem}
+\newlist{@checklist}{itemize}{1}
+\setlist[@checklist]{itemindent=0pt,itemsep=0pt,labelsep=13pt,topsep=0pt,leftmargin=17pt,label=\includegraphics{check.pdf}}
+
+\newenvironment{checklist}[1]{
+  \noindent\begin{tabular}{l}
+    \cellcolor{lightbluejips}\begin{minipage}[b]{15.6cm}
+      \vspace{2.5pt}
+      \hspace{-4.5pt}\fontsize{12pt}{12pt}\selectfont \color{darkbluejips} \bfseries \textsc{#1}
+      \vspace{-1.5pt}
+    \end{minipage} \\
+    \cellcolor{vlightbluejips}\begin{minipage}[b]{15.6cm}
+      \arialnarrowfont \fontsize{11pt}{12pt}\selectfont \color{darkbluejips} \bfseries
+      \begin{@checklist}
+}{
+      \end{@checklist}
+
+    \end{minipage}
+  \end{tabular}
+}
+
+
+
 \newenvironment{ack}{%
   \section*{Remerciements}
   \fontsize{9pt}{9pt}\selectfont\itshape
@@ -341,12 +365,12 @@
 }
 
 
-\newenvironment{JIPSBios}{%
-  \section*{Biographie}
+\newenvironment{biographies}{%
+  \section*{Biographies}
 }{
 }
 
-\newcommand\JIPSBio[3]{
+\newcommand\biography[3]{
 
   \vspace{-9pt}
   \noindent\hspace{1mm}\begin{tabular}{p{3.4cm} p{11cm}}
